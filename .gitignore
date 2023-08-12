@@ -1,0 +1,6 @@
+package-log.json
+
+node-modules/*
+
+media/*
+media/.gitkeep
