@@ -20,7 +20,7 @@ app.use((req, res, next) => {
   });
 app.use(express.json());
 // app.use(express.static(__dirname + '/media'));
-app.use(express.static('media')); 
+// app.use(express.static('media')); 
 // app.use('/media', express.static('media'));
 // app.use(filePathMiddleware(path.resolve(__dirname, 'media')));
 app.use('/admin', adminRouter);

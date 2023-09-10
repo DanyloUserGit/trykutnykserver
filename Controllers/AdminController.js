@@ -8,14 +8,13 @@ class AdminController{
             // console.log(req.body);
             // console.log(req.files[0].originalname);
             // file:///D:/Trikutnyk
-            const {header, description, date, url} = req.body;
-            const img = req.files[0];
+            const {header, description, date, url, img} = req.body;
             const candidate = await Post.findOne({header});
             if(candidate){
                 return res.status(400).json({message: "post already exist"});
             }
             const normalUrl = url.replace( / /g, "_" );
-            const post = new Post({header, description, date, url:normalUrl, img:img.originalname});
+            const post = new Post({header, description, date, url:normalUrl, img:img});
             await post.save();
             return res.json({message: "posted successfully!"});
         } catch (error) {
