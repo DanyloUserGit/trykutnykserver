@@ -18,7 +18,7 @@ class AdminController{
             return res.json({message: "posted successfully!"});
         } catch (error) {
             console.log(error);
-            res.status(400).json({message: "something went wrong"});
+            res.status(400).json({message: `${req.body} something went wrong`});
         }
     }
     async posts (req, res){
