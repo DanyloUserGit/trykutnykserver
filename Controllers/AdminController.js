@@ -13,7 +13,7 @@ class AdminController{
             if(candidate){
                 return res.status(400).json({message: "post already exist"});
             }
-            const post = new Post({header:header, description:description, date:date, url:url, img:img});
+            const post = new Post({header:header, description:description, img:img, url:url, date:date});
             await post.save();
             return res.json({message: "posted successfully!"});
         } catch (error) {
