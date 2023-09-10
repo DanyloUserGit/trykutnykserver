@@ -13,12 +13,12 @@ class AdminController{
             if(candidate){
                 return res.status(400).json({message: "post already exist"});
             }
-            const post = new Post({header, description, date, url:url, img:img});
+            const post = new Post({header:header, description:description, date:date, url:url, img:img});
             await post.save();
             return res.json({message: "posted successfully!"});
         } catch (error) {
             console.log(error);
-            res.status(400).json({message: `${req.body} something went wrong`});
+            res.status(400).json({message: `${header} something went wrong`});
         }
     }
     async posts (req, res){
